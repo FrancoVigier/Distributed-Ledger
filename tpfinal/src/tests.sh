@@ -1,0 +1,10 @@
+#bin/bash
+erl -compile isis ledger
+erl -setcookie wermer -sname a -noshell -detached -eval 'isis:p("a@emmanuel-A320M-S2H"), ledger:start(), lists:foreach(fun (_) -> ledger:append({ length(ledger:get()), self(), "data"}) end, lists:seq(1, 500)), io:format("~p", [length(ledger:get())])'
+erl -setcookie wermer -sname b -noshell -detached -eval 'isis:p("a@emmanuel-A320M-S2H"), ledger:start(), lists:foreach(fun (_) -> ledger:append({ length(ledger:get()), self(), "data"}) end, lists:seq(1, 1000)), io:format("~p", [length(ledger:get())])'
+erl -setcookie wermer -sname c -noshell -detached -eval 'isis:p("a@emmanuel-A320M-S2H"), ledger:start(), lists:foreach(fun (_) -> ledger:append({ length(ledger:get()), self(), "data"}) end, lists:seq(1, 1000)), io:format("~p", [length(ledger:get())])'
+erl -setcookie wermer -sname d -noshell -detached -eval 'isis:p("a@emmanuel-A320M-S2H"), ledger:start(), lists:foreach(fun (_) -> ledger:append({ length(ledger:get()), self(), "data"}) end, lists:seq(1, 1000)), io:format("~p", [length(ledger:get())])'
+erl -setcookie wermer -sname e -noshell -detached -eval 'isis:p("a@emmanuel-A320M-S2H"), ledger:start(), lists:foreach(fun (_) -> ledger:append({ length(ledger:get()), self(), "data"}) end, lists:seq(1, 1000)), io:format("~p", [length(ledger:get())])'
+erl -setcookie wermer -sname f -noshell -detached -eval 'isis:p("a@emmanuel-A320M-S2H"), ledger:start(), lists:foreach(fun (_) -> ledger:append({ length(ledger:get()), self(), "data"}) end, lists:seq(1, 1000)), io:format("~p", [length(ledger:get())])'
+erl -setcookie wermer -sname g -noshell -detached -eval 'isis:p("a@emmanuel-A320M-S2H"), ledger:start(), lists:foreach(fun (_) -> ledger:append({ length(ledger:get()), self(), "data"}) end, lists:seq(1, 1000)), io:format("~p", [length(ledger:get())])'
+erl -setcookie wermer -sname h -eval 'isis:p("a@emmanuel-A320M-S2H"), ledger:start(), lists:foreach(fun (_) -> ledger:append({ length(ledger:get()), self(), "data"}) end, lists:seq(1, 1000)), io:format("~p", [length(ledger:get())]), q()'
